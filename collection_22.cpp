@@ -24,6 +24,18 @@ template<typename T, typename U> static inline void amax(T &x, U y){ if(x < y) x
 template<typename...T>void write(T&&...args){((cout<<args<<" "),...);} //multiple type output  using rvalue refernce 
 template<typename...T>void read(T&...args){((cin>>args),...);} //multi type input
 
+//**************************************dfs***********************************//
+
+//int n, m, vis[MAX_N];
+//vector<int> adj[MAX_N];
+
+void dfs(int u) {
+    vis[u] = 1;
+    for (int v : adj[u]) {
+        if (vis[v]) continue;
+        dfs(v);
+    }
+}
 
 
 
