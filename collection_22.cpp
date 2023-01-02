@@ -20,7 +20,10 @@ const ll INF = 1e9;
 
 template<typename T, typename U> static inline void amin(T &x, U y){ if(y < x) x = y; }
 template<typename T, typename U> static inline void amax(T &x, U y){ if(x < y) x = y; }
- 
+//making read write fucntions to for n number of elements
+template<typename...T>void write(T&&...args){((cout<<args<<" "),...);} //multiple type output  using rvalue refernce 
+template<typename...T>void read(T&...args){((cin>>args),...);} //multi type input
+
 
 
 
