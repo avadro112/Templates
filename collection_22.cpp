@@ -117,7 +117,16 @@ int knapsack(int w,int wt[],int val[],int n){  	 				//bruteforce using recursio
 //driver code will contains :
 // 	coins[] and N and sum
 
-
+int coin_sum(int coin[],int n,int sum){ //brute force with 2^n can be optimised with polyn using memoization
+	if(sum==0)
+		return 1;
+	if(sum<0)
+		return 0;
+	if(n<=0)
+		return 0;
+	else
+		return coin_sum(coin,n-1,sum) + coin_sum(coin,n,sum-coin[n-1]);
+}
 using namespace std;
 
 int main (void){
