@@ -25,7 +25,7 @@ template<typename...T>void write(T&&...args){((cout<<args<<" "),...);} //multipl
 template<typename...T>void read(T&...args){((cin>>args),...);} //multi type input
 
 //**************************************dfs***********************************//
-
+//better comment out if not iin use
 //int n, m, vis[MAX_N];
 //vector<int> adj[MAX_N];
 
@@ -34,6 +34,25 @@ void dfs(int u) {
     for (int v : adj[u]) {
         if (vis[v]) continue;
         dfs(v);
+    }
+}
+//***********************************bfs***********************************//
+//better comment out if not iin use
+//int n, m;
+vector<int> dist;
+
+void bfs(int s) {
+    dist.assign(n + 1, -1);
+    queue<int> q;
+    dist[s] = 0; q.push(s);
+    while (q.size()) {
+        int u = q.front(); q.pop();
+        for (int v : adj[u]) {
+            if (dist[v] == -1) {
+                dist[v] = dist[u] + 1;
+                q.push(v);
+            }
+        }
     }
 }
 
