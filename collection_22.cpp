@@ -55,7 +55,15 @@ void bfs(int s) {
         }
     }
 }
-
+//*****************LCS*********************************//
+int lcs(char *x,char *y,int m,int n){             //only aplied on char[] needed to modify for string 
+	if(m==0|n==0)
+		return 0;
+	if(x[m-1]==y[n-1])								//imagined as 2D matrix with diagonal elements with addiotion of previous values
+		return 1+ lcs(x,y,m-1,n-1);
+	else 
+		return max(lcs(x,y,m-1,n),lcs(x,y,m,n-1));    		//most close approcaht ot 0-1 knapsack 
+}
 
 
 using namespace std;
