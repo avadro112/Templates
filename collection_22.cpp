@@ -29,32 +29,32 @@ template<typename...T>void read(T&...args){((cin>>args),...);} //multi type inpu
 //int n, m, vis[MAX_N];
 //vector<int> adj[MAX_N];
 
-void dfs(int u) {
-    vis[u] = 1;
-    for (int v : adj[u]) {
-        if (vis[v]) continue;
-        dfs(v);
-    }
-}
+// void dfs(int u) {
+//     vis[u] = 1;
+//     for (int v : adj[u]) {
+//         if (vis[v]) continue;
+//         dfs(v);
+//     }
+// }
 //***********************************bfs***********************************//
 //better comment out if not iin use
 //int n, m;
-vector<int> dist;
+// vector<int> dist;
 
-void bfs(int s) {
-    dist.assign(n + 1, -1);
-    queue<int> q;
-    dist[s] = 0; q.push(s);
-    while (q.size()) {
-        int u = q.front(); q.pop();
-        for (int v : adj[u]) {
-            if (dist[v] == -1) {
-                dist[v] = dist[u] + 1;
-                q.push(v);
-            }
-        }
-    }
-}
+// void bfs(int s) {
+//     dist.assign(n + 1, -1);
+//     queue<int> q;
+//     dist[s] = 0; q.push(s);
+//     while (q.size()) {
+//         int u = q.front(); q.pop();
+//         for (int v : adj[u]) {
+//             if (dist[v] == -1) {
+//                 dist[v] = dist[u] + 1;
+//                 q.push(v);
+//             }
+//         }
+//     }
+// }
 //*****************LCS*********************************//
 int lcs(char *x,char *y,int m,int n){             //only aplied on char[] needed to modify for string 
 	if(m==0|n==0)
