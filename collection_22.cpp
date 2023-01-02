@@ -18,6 +18,9 @@ const ll INF = 1e9;
 #define debug(...) 3000
 #endif
 
+template<typename T, typename U> static inline void amin(T &x, U y){ if(y < x) x = y; }
+template<typename T, typename U> static inline void amax(T &x, U y){ if(x < y) x = y; }
+ 
 
 
 
