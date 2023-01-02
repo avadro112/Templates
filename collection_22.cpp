@@ -64,7 +64,29 @@ int lcs(char *x,char *y,int m,int n){             //only aplied on char[] needed
 	else 
 		return max(lcs(x,y,m-1,n),lcs(x,y,m,n-1));    		//most close approcaht ot 0-1 knapsack 
 }
+//Making subset sum problem checking only if exist 
 
+bool is_subsetsum(int set[],int n,int sum){
+	if(sum==0)
+		return true;			//probblem is NP complete so not possible polynomial time compelx.
+	if(n==0)					//generally dont ask to optimised
+		return false;
+	if(set[n-1]>sum)
+		return is_subsetsum(set,n-1,sum);
+	else
+		return is_subsetsum(set,n-1,sum) || is_subsetsum(set,n-1,sum-set[n-1]);
+}
+
+
+//number of path for mXn matrix 
+int number_of_path(int m,int n){
+	if(n==1 || m==1)
+		return 1;
+	return number_of_path(m-1,n) + number_of_path(m,n-1); 
+
+//if diagonal movement is allowed then "
+	//return number_of_path(m-1,n) + number_of_path(m,n-1) + number_of_path(m-1,n-1);
+}
 
 using namespace std;
 
