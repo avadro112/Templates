@@ -87,6 +87,15 @@ int number_of_path(int m,int n){
 //if diagonal movement is allowed then "
 	//return number_of_path(m-1,n) + number_of_path(m,n-1) + number_of_path(m-1,n-1);
 }
+//optimization of above problem using memoization DP
+int optimised_numberofpath(int m,int n,int dp[4][4])  ///dirver code require dp[][] of 4
+{
+	if(n==1||m==1)
+		return dp[m][n] =1;
+	if(dp[m][n]==0)
+		dp[m][n] = optimised_numberofpath(m-1,n,dp) + optimised_numberofpath(m,n-1,dp);  //memoization to skip trivial steps 
+	return dp[m][n];
+}
 
 using namespace std;
 
