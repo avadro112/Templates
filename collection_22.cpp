@@ -11,6 +11,14 @@ const ll INF = 1e9;
 //loops 
 #define fo(i,n) for(int i=0;i<n;i++)
 #define kfor(i,k,n) for(int i=k;i<n;i++)
+//alternate debug 
+#ifdef LOCAL
+#define debug(...) debug_out(#__VA_ARGS__,__VAR_ARGS__)
+#else
+#define debug(...) 3000
+#endif
+
+
 
 
 using namespace std;
