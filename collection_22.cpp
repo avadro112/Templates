@@ -139,6 +139,21 @@ int optimised_coin_sum(const int coin[],const int &n,const int &sum){
 	}
 	return table[sum];
 }
+//rod cutting brute force 2^n 
+// given arr is the price of the ith part of the rod 
+//provde the solution which is capable of maximum cost among the arr(price)
+//where lenght is the size of arr
+int rodcutting(int a[],int indx,int n){
+  if(indx == 0)
+    return n* a[0];
+  int nocuting = rodcutting(a,indx-1,n);
+  int cut = INT_MIN;
+  int rod_lenght = indx+1;
+  if(rod_lenght <= n){
+    cut  = a[indx] + rodcutting(a,indx,n-rod_lenght);
+  }
+  return max(nocuting,cut);
+}
 
 using namespace std;
 
