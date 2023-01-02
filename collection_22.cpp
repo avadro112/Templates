@@ -127,6 +127,19 @@ int coin_sum(int coin[],int n,int sum){ //brute force with 2^n can be optimised 
 	else
 		return coin_sum(coin,n-1,sum) + coin_sum(coin,n,sum-coin[n-1]);
 }
+//optimised bottom up tabulation; 
+int optimised_coin_sum(const int coin[],const int &n,const int &sum){
+	int table[sum+1];
+	memset(table,0,sizeof(table));
+	table[0] = 1;
+	for(int i=0;i<n;i++){
+		for(int j=coin[i];j<=sum;j++){
+			table[j]+=table[j-coin[i]];
+		}
+	}
+	return table[sum];
+}
+
 using namespace std;
 
 int main (void){
