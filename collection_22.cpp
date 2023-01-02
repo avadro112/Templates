@@ -96,6 +96,23 @@ int optimised_numberofpath(int m,int n,int dp[4][4])  ///dirver code require dp[
 		dp[m][n] = optimised_numberofpath(m-1,n,dp) + optimised_numberofpath(m,n-1,dp);  //memoization to skip trivial steps 
 	return dp[m][n];
 }
+//KNAPASCK 0-1 
+//using recursion
+
+//
+//int max(int a,int b){return (a>b) ? a:b;}
+//max() utility incase iostream
+int knapsack(int w,int wt[],int val[],int n){  	 				//bruteforce using recursion of2 ^ n
+
+	if(n==0||w==0)
+		return 0;
+	if(wt[n-1]>w){
+		return knapsack(w,wt,val,n-1);
+	}
+	else
+		return max(val[n-1] + knapsack(w-wt[n-1],wt,val,n-1),
+			knapsack(w,wt,val,n-1));
+}
 
 using namespace std;
 
