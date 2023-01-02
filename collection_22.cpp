@@ -113,6 +113,10 @@ int knapsack(int w,int wt[],int val[],int n){  	 				//bruteforce using recursio
 		return max(val[n-1] + knapsack(w-wt[n-1],wt,val,n-1),
 			knapsack(w,wt,val,n-1));
 }
+//coin change porblem where arry with n elements and possible way to make up sum(given)
+//driver code will contains :
+// 	coins[] and N and sum
+
 
 using namespace std;
 
